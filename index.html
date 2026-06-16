@@ -4604,18 +4604,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
       <span class="hero-greeting-icon" id="hero-greeting-icon" style="display:none">✨</span>
     </div>
 
-   <!-- PULSO DEL DÍA -->
-<div class="hv2-pulse hv2-rise" style="--d:0.14s">
-  <div class="hv2-pulse-item">
-    <div class="hv2-pulse-num" id="hv2-cot-hoy" data-count="0">0</div>
-    <div class="hv2-pulse-lbl">cotizaste hoy</div>
-    <div class="hv2-meta-bar" id="hv2-meta-bar"><div class="hv2-meta-fill" id="hv2-meta-fill"></div></div>
+ <div class="home-top-row">
+
+  <!-- PULSO DEL DÍA -->
+  <div class="hv2-pulse hv2-rise" style="--d:0.14s">
+    <div class="hv2-pulse-item">
+      <div class="hv2-pulse-num" id="hv2-cot-hoy" data-count="0">0</div>
+      <div class="hv2-pulse-lbl">cotizaste hoy</div>
+      <div class="hv2-meta-bar" id="hv2-meta-bar">
+        <div class="hv2-meta-fill" id="hv2-meta-fill"></div>
+      </div>
+    </div>
+
+    <div class="hv2-pulse-div"></div>
+
+    <div class="hv2-pulse-item" id="hv2-pulse-crm">
+      <div class="hv2-pulse-num hv2-pulse-num-crm" id="hv2-cli-pend" data-count="0">0</div>
+      <div class="hv2-pulse-lbl">clientes te esperan</div>
+    </div>
   </div>
-  <div class="hv2-pulse-div"></div>
-  <div class="hv2-pulse-item" id="hv2-pulse-crm">
-    <div class="hv2-pulse-num hv2-pulse-num-crm" id="hv2-cli-pend" data-count="0">0</div>
-    <div class="hv2-pulse-lbl">clientes te esperan</div>
-  </div>
+
+  <!-- ACCIÓN DOMINANTE: NUEVA COTIZACIÓN -->
+  <button class="hv2-cta" onclick="abrirPlatSheet()">
+    <span class="hv2-cta-icon">＋</span>
+    <span class="hv2-cta-text">
+      <span class="hv2-cta-title">NUEVA COTIZACION 📲</span>
+      <span class="hv2-cta-sub">mas prospectos mas ventas</span>
+    </span>
+    <span class="hv2-cta-arrow">→</span>
+  </button>
+
 </div>
 
 <!-- RACHA DE ACTIVIDAD (solo asesor) -->
@@ -4623,16 +4641,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
   <span class="hv2-racha-ico">🔥</span>
   <span class="hv2-racha-txt" id="hv2-racha-txt">Racha de 0 días</span>
 </div>
-
-<!-- ACCIÓN DOMINANTE: NUEVA COTIZACIÓN -->
-<button class="hv2-cta" onclick="abrirPlatSheet()">
-  <span class="hv2-cta-icon">＋</span>
-  <span class="hv2-cta-text">
-    <span class="hv2-cta-title">NUEVA COTIZACION 📲</span>
-    <span class="hv2-cta-sub">mas prospectos mas ventas</span>
-  </span>
-  <span class="hv2-cta-arrow">→</span>
-</button>
        
     <!-- OFERTAS FLASH -->
     <div class="hv2-flash hv2-rise" style="--d:0.4s" id="flash-card" onclick="showFlashOffers()">
@@ -4691,7 +4699,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
     <!-- [v1.10.47] CIERRE DEL HOME -->
     <div class="hv2-footer hv2-rise" style="--d:0.84s">
       <div class="hv2-footer-brand">SIIVE<span> 1.0</span></div>
-      <div class="hv2-footer-meta">ARMA MX<span id="hv2-footer-ver"></span></div>
+      <div class="hv2-footer-meta">ARMA<span id="hv2-footer-ver">MX</span></div>
     </div>
 
   </div>
