@@ -4615,9 +4615,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
           Actualizar
         </button>
-        <button class="hv2-icon-btn" onclick="showTopComm()" title="Top comisiones" aria-label="Top comisiones"></button>
-        <button class="hv2-icon-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">🌙</button>
-        <button class="asesor-chip" id="asesor-chip" onclick="openAsesorEdit()" title="Cerrar sesión" style="display:none">
+          <button class="asesor-chip" id="asesor-chip" onclick="openAsesorEdit()" title="Cerrar sesión" style="display:none">
           <div class="asesor-chip-avatar" id="asesor-chip-avatar">A</div>
           <span id="asesor-chip-name">Asesor</span>
         </button>
@@ -5824,25 +5822,11 @@ document.getElementById('st-npi').textContent=all.filter(d=>d.status==='NPI').le
 document.getElementById('st-bun').textContent=all.filter(d=>d.bundle).length;
 document.getElementById('st-lim').textContent=all.filter(d=>d.status==='INV. LIMITADO EN CANAL').length;
 
-
-// ── DARK MODE ────────────────────────────────────────────────────────────────
-function toggleTheme(){
-  const cur=document.documentElement.getAttribute('data-theme');
-  const next=cur==='dark'?'light':'dark';
-  document.documentElement.setAttribute('data-theme',next);
-  document.getElementById('theme-toggle').textContent=next==='dark'?'☀️':'🌙';
-  try{localStorage.setItem('theme',next);}catch(e){}
-}
+// ── MODO OSCURO FIJO ─────────────────────────────
 (function initTheme(){
-  let saved='light';
-  try{saved=localStorage.getItem('theme')||'light';}catch(e){}
-  document.documentElement.setAttribute('data-theme',saved);
-  setTimeout(function(){
-    const btn=document.getElementById('theme-toggle');
-    if(btn) btn.textContent=saved==='dark'?'☀️':'🌙';
-  },0);
+  document.documentElement.setAttribute('data-theme','dark');
 })();
-
+     
 // ── BUDGET CALCULATOR ────────────────────────────────────────────────────────
 function showCalc(){show('s-calc');document.getElementById('budget-input').focus();}
 function calcBudget(){
