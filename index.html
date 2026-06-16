@@ -4588,7 +4588,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
           Actualizar
         </button>
-        <button class="hv2-icon-btn" onclick="showTopComm()" title="Top comisiones" aria-label="Top comisiones">🏆</button>
+        <button class="hv2-icon-btn" onclick="showTopComm()" title="Top comisiones" aria-label="Top comisiones"></button>
         <button class="hv2-icon-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">🌙</button>
         <button class="asesor-chip" id="asesor-chip" onclick="openAsesorEdit()" title="Cerrar sesión" style="display:none">
           <div class="asesor-chip-avatar" id="asesor-chip-avatar">A</div>
@@ -4604,35 +4604,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
       <span class="hero-greeting-icon" id="hero-greeting-icon" style="display:none">✨</span>
     </div>
 
-    <!-- PULSO DEL DÍA -->
-    <div class="hv2-pulse hv2-rise" style="--d:0.14s">
-      <div class="hv2-pulse-item">
-        <div class="hv2-pulse-num" id="hv2-cot-hoy" data-count="0">0</div>
-        <div class="hv2-pulse-lbl">cotizaste hoy</div>
-        <div class="hv2-meta-bar" id="hv2-meta-bar"><div class="hv2-meta-fill" id="hv2-meta-fill"></div></div>
-      </div>
-      <div class="hv2-pulse-div"></div>
-      <div class="hv2-pulse-item" id="hv2-pulse-crm">
-        <div class="hv2-pulse-num hv2-pulse-num-crm" id="hv2-cli-pend" data-count="0">0</div>
-        <div class="hv2-pulse-lbl">clientes te esperan</div>
-      </div>
-    </div>
-    <!-- RACHA DE ACTIVIDAD (solo asesor) -->
-    <div class="hv2-racha hv2-rise" id="hv2-racha" style="--d:0.17s;display:none">
-      <span class="hv2-racha-ico">🔥</span>
-      <span class="hv2-racha-txt" id="hv2-racha-txt">Racha de 0 días</span>
-    </div>
+   <!-- PULSO DEL DÍA -->
+<div class="hv2-pulse hv2-rise" style="--d:0.14s">
+  <div class="hv2-pulse-item">
+    <div class="hv2-pulse-num" id="hv2-cot-hoy" data-count="0">0</div>
+    <div class="hv2-pulse-lbl">cotizaste hoy</div>
+    <div class="hv2-meta-bar" id="hv2-meta-bar"><div class="hv2-meta-fill" id="hv2-meta-fill"></div></div>
+  </div>
+  <div class="hv2-pulse-div"></div>
+  <div class="hv2-pulse-item" id="hv2-pulse-crm">
+    <div class="hv2-pulse-num hv2-pulse-num-crm" id="hv2-cli-pend" data-count="0">0</div>
+    <div class="hv2-pulse-lbl">clientes te esperan</div>
+  </div>
+</div>
 
-    <!-- ACCIÓN DOMINANTE: NUEVA COTIZACIÓN -->
-    <button class="hv2-cta" onclick="abrirPlatSheet()">
-      <span class="hv2-cta-icon">＋</span>
-      <span class="hv2-cta-text">
-        <span class="hv2-cta-title">NUEVA COTIZACION 📲</span>
-        <span class="hv2-cta-sub">mas prospectos mas ventas</span>
-      </span>
-      <span class="hv2-cta-arrow">→</span>
-    </button>
+<!-- RACHA DE ACTIVIDAD (solo asesor) -->
+<div class="hv2-racha hv2-rise" id="hv2-racha" style="--d:0.17s;display:none">
+  <span class="hv2-racha-ico">🔥</span>
+  <span class="hv2-racha-txt" id="hv2-racha-txt">Racha de 0 días</span>
+</div>
 
+<!-- ACCIÓN DOMINANTE: NUEVA COTIZACIÓN -->
+<button class="hv2-cta" onclick="abrirPlatSheet()">
+  <span class="hv2-cta-icon">＋</span>
+  <span class="hv2-cta-text">
+    <span class="hv2-cta-title">NUEVA COTIZACION 📲</span>
+    <span class="hv2-cta-sub">mas prospectos mas ventas</span>
+  </span>
+  <span class="hv2-cta-arrow">→</span>
+</button>
+       
     <!-- OFERTAS FLASH -->
     <div class="hv2-flash hv2-rise" style="--d:0.4s" id="flash-card" onclick="showFlashOffers()">
       <div class="hv2-flash-head">
