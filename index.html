@@ -4816,7 +4816,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;co
       <div id="adm-scope-region" class="adm-scope-region" style="display:none"></div>
       <div id="adm-scope" class="adm-scope" style="display:none"></div>
 
-      <div class="adm-label" style="margin-top:18px">Buscar por ATTUID</div>
+      <div class="adm-label" style="margin-top:18px">Buscar por USUARIO</div>
       <div class="adm-search">
         <input id="adm-attuid" class="adm-input" type="text" placeholder="Ej. DC499W" autocapitalize="characters" autocomplete="off" oninput="this.value=this.value.toUpperCase()" onkeydown="if(event.key==='Enter')adminBuscar()">
         <button class="adm-btn" onclick="adminBuscar()">Buscar</button>
@@ -7812,7 +7812,7 @@ async function doLogin(){
   const password=(inPwd.value||'').trim();
   errEl.textContent='';
 
-  if(!attuid){errEl.textContent='Ingresa tu ATTUID.';return;}
+  if(!attuid){errEl.textContent='Ingresa tu Usuario.';return;}
   if(!password){errEl.textContent='Ingresa tu contraseña.';return;}
 
   btn.disabled=true;btn.textContent='Verificando...';
@@ -7848,7 +7848,7 @@ async function doLogin(){
     const ref=firestoreFns.doc(firestoreDB,'empleados',attuid);
     const snap=await firestoreFns.getDoc(ref);
     if(!snap.exists()){
-      errEl.textContent='ATTUID no encontrado. Revísalo.';
+      errEl.textContent='Usuario no encontrado. Revísalo.';
       btn.disabled=false;btn.textContent='Entrar';
       return;
     }
@@ -8363,7 +8363,7 @@ function openAsesorEdit(){
   // ATTUID (no editable)
   const attuidBox = document.createElement('div');
   attuidBox.style.cssText = 'margin-bottom:18px;padding:10px 12px;background:rgba(0,0,0,0.04);border-radius:10px';
-  attuidBox.innerHTML = '<div style="font-size:10px;color:var(--label3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">ATTUID</div><div style="font-size:14px;font-weight:600;font-family:monospace">'+asesorData.attuid+'</div>';
+  attuidBox.innerHTML = '<div style="font-size:10px;color:var(--label3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">USUARIO</div><div style="font-size:14px;font-weight:600;font-family:monospace">'+asesorData.attuid+'</div>';
   modal.appendChild(attuidBox);
   
   // Botones
@@ -8566,7 +8566,7 @@ function openDiagnostico(){
   
   // ── ASESOR ──
   modal.appendChild(seccionTitulo('Asesor'));
-  modal.appendChild(fila('ATTUID', ad.attuid || '—', ad.attuid ? null : 'err'));
+  modal.appendChild(fila('USUARIO', ad.attuid || '—', ad.attuid ? null : 'err'));
   modal.appendChild(fila('Nombre', ad.name || ad.nombre || '—', null));
   modal.appendChild(fila('Tienda', ad.tienda || ad.sucursal || '—', (ad.tienda||ad.sucursal) ? null : 'err'));
   modal.appendChild(fila('Región', ad.region || '—', null));
@@ -11994,7 +11994,7 @@ async function exportarDashboardExcel(){
     // ─── HOJA 5: TOP ASESORES ─────────────────────────────────────────
     // [v1.9.24] Incluir asesores SIN ACTIVIDAD del territorio si los tenemos
     if(s.topAsesores && s.topAsesores.length){
-      const rows = [['#', 'ATTUID', 'Nombre', 'Tienda', 'Región', 'Cotizaciones', 'Estado']];
+      const rows = [['#', 'USUARIO', 'Nombre', 'Tienda', 'Región', 'Cotizaciones', 'Estado']];
       const cotizadoresSet = new Set();
       s.topAsesores.forEach(function(a, i){
         const meta = (s.asesorMeta||{})[a[0]] || {};
@@ -12042,7 +12042,7 @@ async function exportarDashboardExcel(){
     
     // ─── HOJA 8: TOP REGIONALES (solo si director) ────────────────────
     if(data.regionales && data.regionales.length){
-      const rows = [['#', 'ATTUID', 'Nombre', 'Región', 'Tiendas', 'Cotizaciones', 'Estatus']];
+      const rows = [['#', 'USUARIO', 'Nombre', 'Región', 'Tiendas', 'Cotizaciones', 'Estatus']];
       const activos = data.regionales.filter(function(r){return r.activo;});
       const inactivos = data.regionales.filter(function(r){return !r.activo;});
       let idx = 1;
@@ -14250,7 +14250,7 @@ async function adminBuscar(){
     await loadFirebase();
     const ref = firestoreFns.doc(firestoreDB,'empleados',attuid);
     const snap = await firestoreFns.getDoc(ref);
-    if(!snap.exists()){ out.innerHTML='<div class="adm-msg">No existe un colaborador con ATTUID <b>'+_admEsc(attuid)+'</b>.</div>'; return; }
+    if(!snap.exists()){ out.innerHTML='<div class="adm-msg">No existe un colaborador con ese USUARIO <b>'+_admEsc(attuid)+'</b>.</div>'; return; }
     const d = snap.data()||{};
     _admGente[attuid] = d;
     out.innerHTML = _admTarjeta(attuid, d);
@@ -15486,13 +15486,13 @@ document.addEventListener('visibilitychange', function(){
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
     <div class="asesor-modal-title" id="asesor-modal-title">Inicia sesión</div>
-    <div class="asesor-modal-sub" id="asesor-modal-sub">Usa tu ATTUID y contraseña para entrar</div>
-    <input class="asesor-input" id="login-attuid-input" placeholder="ATTUID (ej. AR044U)" autocapitalize="characters" autocomplete="username" />
+    <div class="asesor-modal-sub" id="asesor-modal-sub">Usa tu usuario y contraseña para entrar</div>
+    <input class="asesor-input" id="login-attuid-input" placeholder="USUARIO" autocapitalize="characters" autocomplete="username" />
     <input class="asesor-input" id="login-password-input" placeholder="Contraseña" type="password" autocomplete="current-password" />
     <div id="login-error" style="color:#E24B4A;font-size:13px;min-height:18px;margin:-2px 0 8px;text-align:center"></div>
     <button class="asesor-btn-save" id="login-btn" onclick="doLogin()">Entrar</button>
     <div style="font-size:11px;color:var(--hv2-ink3,#5B6573);margin-top:12px;text-align:center;line-height:1.4">
-      Si es tu primera vez, tu contraseña es tu mismo ATTUID.
+      Si no puedes entrar, pide tu alta al administrador.
     </div>
   </div>
 </div>
