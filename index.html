@@ -6595,8 +6595,6 @@ function cotSend(){
   if(cotState.promo === 0){
     msg += '_*Equipo sin costo sujeto a permanencia del plazo contratado. Cancelación anticipada genera cobro del equipo._\n\n';
   }
-  // [v1.10.67] Cierre en negritas (antes iba en cursiva).
-  msg += '*Cotización generada por SIIVE*';
   
   // [v1.10.36 FIX HONOR/HUAWEI] El bug de contadores por texto es exclusivo de
   // teléfonos Honor/Huawei: su capa MagicOS/EMUI CONGELA la app apenas pasa a
@@ -14936,7 +14934,7 @@ function buildFlyerHTML(state){
     }
     h+='</div></div>';
   }
-  h+='<div class="flyer-v3-disc">* Pago inicial sujeto a aprobación crediticia · Cotización generada por SIIVE · Precios sujetos a cambio sin previo aviso</div>';
+  h+='<div class="flyer-v3-disc">* Pago inicial sujeto a aprobación crediticia · Cotización generada por AT&T · Precios sujetos a cambio sin previo aviso</div>';
   h+='</div>';
   
   h+='</div>';
