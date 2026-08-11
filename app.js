@@ -3516,12 +3516,13 @@ let firestoreDB=null;
 let firestoreFns=null; // {collection, doc, setDoc, serverTimestamp, getDoc}
 
 const FIREBASE_CFG={
-  apiKey: "AIzaSyC9qhK78TKkLUu_gcN3WRwyKV8-mTk1Lsc",
-  authDomain: "techguide-primemx.firebaseapp.com",
-  projectId: "techguide-primemx",
-  storageBucket: "techguide-primemx.firebasestorage.app",
-  messagingSenderId: "53436933819",
-  appId: "1:53436933819:web:fef1e0299e41c136c5ab9e"
+  apiKey: "AIzaSyBFY4FD34yZzqRO28qxKfyq7w1Eif9aUAE",
+  authDomain: "cotizadorpro1.firebaseapp.com",
+  projectId: "cotizadorpro1",
+  storageBucket: "cotizadorpro1.firebasestorage.app",
+  messagingSenderId: "323425676639",
+  appId: "1:323425676639:web:f9ba70e0c3e1b059091aea",
+  measurementId: "G-VHQKNPRD6N"
 };
 
 // Cargar Firebase SDK desde gstatic.com (CDN de Google, no bloqueado por Edge)
