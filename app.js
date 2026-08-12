@@ -2096,7 +2096,7 @@ function cotSend(){
     msg += '_*Equipo sin costo sujeto a permanencia del plazo contratado. Cancelación anticipada genera cobro del equipo._\n\n';
   }
   // [v1.10.67] Cierre en negritas (antes iba en cursiva).
-  msg += '*Cotización generada por Prime MX*';
+  msg += '*Cotización generada por AT&T*';
   
   // [v1.10.36 FIX HONOR/HUAWEI] El bug de contadores por texto es exclusivo de
   // teléfonos Honor/Huawei: su capa MagicOS/EMUI CONGELA la app apenas pasa a
