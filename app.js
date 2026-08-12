@@ -3113,7 +3113,7 @@ async function generateSpecsPDF(){
         await navigator.share({
           files: [file],
           title: dev.brand + ' ' + dev.name,
-          text: 'Ficha técnica · Prime MX'
+          text: 'Ficha técnica · AT&T'
         });
         if(btn){btn.innerHTML = originalHTML; btn.disabled = false;}
         return;
@@ -6366,7 +6366,7 @@ function generarMensajeAsesor(c, ultCotiz){
   else saludo = '¡Hola ' + primerNombre + '! ¿Cómo has estado?';
   
   let msg = saludo + '\n\n';
-  msg += 'Soy ' + nombreAsesor + ', de *Prime MX*';
+  msg += 'Soy ' + nombreAsesor + ', de *AT&T*';
   const tienda = asesorData.tienda || asesorData.sucursal || '';
   if(tienda) msg += ' (' + tienda.replace(/_/g,' ') + ')';
   msg += '. ';
@@ -11612,7 +11612,7 @@ function closeFlyerPreview(){
 async function shareFlyerImage(){
   if(!lastGeneratedBlob){alert('Imagen no lista');return;}
   
-  const fileName = 'cotizacion-primemx-' + Date.now() + '.png';
+  const fileName = 'cotizacion-attmx-' + Date.now() + '.png';
   const file = new File([lastGeneratedBlob], fileName, {type: 'image/png'});
   
   // [v1.10.12 BUG FIX] Armar listener visibilitychange ANTES de navigator.share
