@@ -23,8 +23,8 @@ function loadVendors(){
   if(typeof html2canvas !== 'undefined' && typeof window.jspdf !== 'undefined'){
     return Promise.resolve(); // ya cargado
   }
-  if(_vendorsPromise) return _vendorsPromise; // ya se está cargando
-  _vendorsPromise = new Promise(function(resolve, reject){
+  if(_vendorsomise) return _vendorsomise; // ya se está cargando
+  _vendorsomise = new omise(function(resolve, reject){
     const s = document.createElement('script');
     // [v1.10.30] cache-busting por BUILD_ID
     s.src = 'vendors.js?v=' + (window.BUILD_ID || '0');
@@ -34,12 +34,12 @@ function loadVendors(){
       resolve();
     };
     s.onerror = function(){
-      _vendorsPromise = null; // permitir reintentar
+      _vendorsomise = null; // permitir reintentar
       reject(new Error('No se pudo cargar vendors.js — verifica tu conexión'));
     };
     document.head.appendChild(s);
   });
-  return _vendorsPromise;
+  return _vendorsomise;
 }
 
 const ICONS=[
@@ -2968,15 +2968,9 @@ function buildSpecsPDFHTML(dev){
   
   return '<div class="specs-page" style="width:794px;background:#FAFAF8;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Inter,sans-serif;color:#1D1D1F;line-height:1.35">'+
     // ── Header: marca + fecha ────────────────────────────────────────────
-    '<div style="display:flex;align-items:center;justify-content:space-between;padding:30px 42px 22px;border-bottom:1px solid #ECECEC">'+
-      '<div style="display:flex;align-items:baseline;gap:0">'+
-        '<span style="font-size:26px;font-weight:700;color:#1D1D1F;letter-spacing:-0.02em">PR</span>'+
-        '<span style="font-size:26px;font-weight:300;color:#0066CC;margin:0 2px">|</span>'+
-        '<span style="font-size:26px;font-weight:700;color:#1D1D1F;letter-spacing:-0.02em">ME</span>'+
-        '<span style="font-size:14px;font-weight:500;color:#86868B;margin-left:4px;letter-spacing:0.08em">MX</span>'+
-      '</div>'+
-      '<div style="font-size:11px;color:#86868B;letter-spacing:0.1em;font-weight:600">FICHA TÉCNICA · '+dateStr+'</div>'+
-    '</div>'+
+   '<div style="display:flex;align-items:center;justify-content:flex-end;padding:30px 42px 22px;border-bottom:1px solid #ECECEC">'+
+  '<div style="font-size:11px;color:#86868B;letter-spacing:0.1em;font-weight:600">FICHA TÉCNICA · '+dateStr+'</div>'+
+'</div>'+
     
     // ── Producto: imagen + nombre ────────────────────────────────────────
     '<div style="padding:32px 42px 24px;text-align:center">'+
@@ -3000,7 +2994,7 @@ function buildSpecsPDFHTML(dev){
     '<div style="margin-top:8px;padding:24px 42px 28px;background:#F5F5F7;border-top:1px solid #ECECEC">'+
       (asesorBlock || '')+
       '<div style="font-size:10px;color:#86868B;line-height:1.5;padding-top:14px;border-top:1px solid #ECECEC;margin-top:14px;display:flex;justify-content:space-between;gap:20px">'+
-        '<div><strong style="color:#1D1D1F;font-weight:600">Prime MX</strong> · Ficha generada el '+dateStr+'</div>'+
+        '<div><strong style="color:#1D1D1F;font-weight:600">Cotizador Pro</strong> · Ficha generada el '+dateStr+'</div>'+
         '<div>Especificaciones sujetas a cambio sin previo aviso</div>'+
       '</div>'+
     '</div>'+
