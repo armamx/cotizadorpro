@@ -2968,9 +2968,15 @@ function buildSpecsPDFHTML(dev){
   
   return '<div class="specs-page" style="width:794px;background:#FAFAF8;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Inter,sans-serif;color:#1D1D1F;line-height:1.35">'+
     // ── Header: marca + fecha ────────────────────────────────────────────
-   '<div style="display:flex;align-items:center;justify-content:flex-end;padding:30px 42px 22px;border-bottom:1px solid #ECECEC">'+
+'<div style="display:flex;align-items:center;justify-content:space-between;padding:30px 42px 22px;border-bottom:1px solid #ECECEC">'+
+  '<div style="display:flex;align-items:baseline;gap:0">'+
+    '<span style="font-size:26px;font-weight:700;color:#1D1D1F;letter-spacing:-0.02em">COT</span>'+
+    '<span style="font-size:26px;font-weight:300;color:#0066CC;margin:0 2px">|</span>'+
+    '<span style="font-size:26px;font-weight:700;color:#1D1D1F;letter-spacing:-0.02em">ZADOR</span>'+
+    '<span style="font-size:14px;font-weight:500;color:#86868B;margin-left:4px;letter-spacing:0.08em">PRO</span>'+
+  '</div>'+
   '<div style="font-size:11px;color:#86868B;letter-spacing:0.1em;font-weight:600">FICHA TÉCNICA · '+dateStr+'</div>'+
-'</div>'+
+'</div>'
     
     // ── Producto: imagen + nombre ────────────────────────────────────────
     '<div style="padding:32px 42px 24px;text-align:center">'+
