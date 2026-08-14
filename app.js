@@ -23,8 +23,8 @@ function loadVendors(){
   if(typeof html2canvas !== 'undefined' && typeof window.jspdf !== 'undefined'){
     return Promise.resolve(); // ya cargado
   }
-  if(_vendorsomise) return _vendorsomise; // ya se está cargando
-  _vendorsomise = new omise(function(resolve, reject){
+  if(_vendorsPromise) return _vendorsPromise; // ya se está cargando
+  _vendorsPromise = new Promise(function(resolve, reject){
     const s = document.createElement('script');
     // [v1.10.30] cache-busting por BUILD_ID
     s.src = 'vendors.js?v=' + (window.BUILD_ID || '0');
@@ -34,12 +34,12 @@ function loadVendors(){
       resolve();
     };
     s.onerror = function(){
-      _vendorsomise = null; // permitir reintentar
+      _vendorsPromise = null; // permitir reintentar
       reject(new Error('No se pudo cargar vendors.js — verifica tu conexión'));
     };
     document.head.appendChild(s);
   });
-  return _vendorsomise;
+  return _vendorsPromise;
 }
 
 const ICONS=[
